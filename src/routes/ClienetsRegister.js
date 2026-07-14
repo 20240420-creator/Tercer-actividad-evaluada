@@ -1,9 +1,9 @@
 import express from "express";
-import ResistreClientesController from "../controller.js";
+import ResistreClientesController from "../controller/registroClientesCntroller.js";
 
 const router = express.Router();
 
-router.route("/").post(ResistreClientesController.register);
-router.route("veryfy").post(ResistreClinetesController.verifygo);
+router.route("/").post(ResistreClientesController.Register);
+router.route("veryfy").post(ResistreClientesController.verifyCode);
 
-export default router
+export default router;

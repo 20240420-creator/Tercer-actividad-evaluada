@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import { config } from "../controller/womiController"
+import { config } from "../controller/womiController.js"
 const WompiController = {};
 WompiController.generateToken = async (req, res) => {
  try {

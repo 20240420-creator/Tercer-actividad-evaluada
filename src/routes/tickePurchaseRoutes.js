@@ -1,14 +1,22 @@
 import express from "express";
-import ticketPurchaseController from "../controllers/ticketPurchaseController.js";
-import { validateAuthCookie } from "../middlewares/authMiddleware.js";
+import ticketPurchaseController from "../controller/ticketPurchaseController.js";
+import { validateAuthToken } from "../middlewares/authMiddlewar.js";
 
 const router = express.Router();
 
-router.route("/")
- .get(validateAuthCookie(["admin"]), ticketPurchaseController.getAllPurchases)
- .post(validateAuthCookie(["customer"]), ticketPurchaseController.insertPurchase);
+router
+  .route("/")
+  .get(validateAuthToken(["admin"]), ticketPurchaseController.getAllPurchases)
+  .post(
+    validateAuthToken(["customer"]),
+    ticketPurchaseController.insertPurchase,
+  );
 
-router.route("/:id")
- .put(ticketPurchaseController.updatePurchase)
- .delete(validateAuthCookie(["admin"]), ticketPurchaseController.deletePurchase);
+router
+  .route("/:id")
+  .put(ticketPurchaseController.updatePurchase)
+  .delete(
+    validateAuthToken(["admin"]),
+    ticketPurchaseController.deletePurchase,
+  );
 export default router;

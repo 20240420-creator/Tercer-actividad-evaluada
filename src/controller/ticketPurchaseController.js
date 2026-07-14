@@ -1,4 +1,4 @@
-import ticketPurchaseModel from "../models/ticketPurchases.js";
+import ticketPurchaseModel from "../models/tickePurchase.js";
 const ticketPurchaseController = {};
 ticketPurchaseController.getAllPurchases = async (req, res) => {
  try {

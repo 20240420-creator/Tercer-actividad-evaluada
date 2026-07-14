@@ -1,6 +1,6 @@
-import router from "./AdminRegister";
+import router from "./AdminRegister.js";
 import exprees from exprees;
-import WompiController from "../controller/womiController";
+import WompiController from "../controller/womiController.js";
 
 const Router = exprees.Router();
 
